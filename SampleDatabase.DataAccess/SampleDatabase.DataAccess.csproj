@@ -4,17 +4,15 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{A0361917-CB85-4FB0-BC90-2462ABE05D31}</ProjectGuid>
-    <OutputType>Exe</OutputType>
+    <ProjectGuid>{D4534334-962E-425D-ADCB-B62F9676E318}</ProjectGuid>
+    <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>SampleDataAccessProject</RootNamespace>
-    <AssemblyName>SampleDataAccessProject</AssemblyName>
+    <RootNamespace>SampleDatabase.DataAccess</RootNamespace>
+    <AssemblyName>SampleDatabase.DataAccess</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -24,7 +22,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -43,20 +40,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Program.cs" />
+    <Compile Include="AnimalDataAccess.cs" />
+    <Compile Include="Connections.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\SampleDataAccess.Models\SampleDataAccess.Models.csproj">
       <Project>{2c5056df-b57f-497c-909b-34040fe14107}</Project>
       <Name>SampleDataAccess.Models</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\SampleDatabase.DataAccess\SampleDatabase.DataAccess.csproj">
-      <Project>{d4534334-962e-425d-adcb-b62f9676e318}</Project>
-      <Name>SampleDatabase.DataAccess</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
