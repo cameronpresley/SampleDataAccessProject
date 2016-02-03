@@ -1,0 +1,6 @@
+﻿CREATE TABLE [dbo].[Animals]
+(
+	[Id] INT IDENTITY PRIMARY KEY,
+	[Name] NVARCHAR(50) NOT NULL,
+	[NumberOfLegs] INT NOT NULL,
+)
