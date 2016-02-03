@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Data.SqlClient;
 using SampleDataAccess.Models;
 
-namespace SampleDatabase.DataAccess
+namespace SampleDatabase.DataAccess.Services
 {
     public class AnimalDataAccess
     {

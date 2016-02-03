@@ -40,9 +40,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AnimalDataAccess.cs" />
+    <Compile Include="Services\AnimalDataAccess.cs" />
     <Compile Include="Connections.cs" />
+    <Compile Include="Interfaces\IAnimalRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\AnimalRepository.cs" />
+    <Compile Include="Services\OracleAnimalDataAccess.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\SampleDataAccess.Models\SampleDataAccess.Models.csproj">

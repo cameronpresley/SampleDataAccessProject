@@ -2,12 +2,14 @@
 using System.Linq;
 using SampleDataAccess.Models;
 using SampleDatabase.DataAccess;
+using SampleDatabase.DataAccess.Interfaces;
+using SampleDatabase.DataAccess.Services;
 
 namespace SampleDataAccessProject
 {
     class Program
     {
-        private static AnimalDataAccess _dataAccess = new AnimalDataAccess();
+        private static IAnimalRepository _repository = new AnimalRepository(new AnimalDataAccess());
         static void Main(string[] args)
         {
             string choice;
@@ -33,7 +35,7 @@ namespace SampleDataAccessProject
 
         private static void ReadAllAnimals()
         {
-            var animals = _dataAccess.ReadAll();
+            var animals = _repository.ReadAll();
             if (!animals.Any())
             {
                 Console.WriteLine("No animals in the database.");
@@ -55,7 +57,7 @@ namespace SampleDataAccessProject
             Console.WriteLine("Enter an animal id.");
             var id = Int32.Parse(Console.ReadLine());
 
-            var animal = _dataAccess.Read(id);
+            var animal = _repository.Read(id);
             if (animal == null)
                 Console.WriteLine("Couldn't find animal with Id of " + id);
             else
@@ -77,7 +79,7 @@ namespace SampleDataAccessProject
             var numberOfLegs = Int32.Parse(Console.ReadLine());
 
             var animal = new Animal(1, name, numberOfLegs);
-            _dataAccess.Create(animal);
+            _repository.Create(animal);
         }
     }
 }
